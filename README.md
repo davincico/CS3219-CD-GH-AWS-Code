@@ -55,3 +55,24 @@ Elastic Beanstalk will now create a new application wiwth a new web server envir
 ![alt text](image-1.png)
 
 ## Part 2: Github Actions for Automated Deployment
+We will now set up GitHub Actions to automate the deployment process, enabling ContinuousDeployment (CD) for our application on AWS Elastic Beanstalk. By doing so, every time changesare pushed to the master branch, GitHub Actions will automatically deploy the updatedapplication to the cloud.
+
+### 1. Set up AWS IAM User and Access Key
+- Create user:
+IAM > Create user > attach policy directly ("AdministratorAccess-AWSElasticBeanstalk")
+This policy grants the permissions to accessthe Elastic Beanstalk service.
+
+- Create Access Key for User
+User > Security credentials > create access key
+![alt text](image-2.png)
+
+- Add secrets to Github settings > secrets and variables > New Repository Secrets
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+
+
+### 2. Create cd.yml under /.github/workflows
+
+### 3. Configure Environment Variables in AWS
+Add your mongoDB Atlas connection string into AWS
+Elastic Beanstalk > Environments (application) > configuration > environmental properties > Add
