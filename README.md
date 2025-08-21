@@ -1,4 +1,4 @@
-# Backend Address Book JS - CD
+# Backend Address Book JS - CD Tutorial
 The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to  MongoDB Atlas.
 
 ### Setting up
@@ -11,6 +11,8 @@ npm install # install all dependencies
 
 npm install mongodb
 ```
+
+## Part 1: Node.js App Deployment on AWS Elastic Beanstalk
 
 ### 1. Set up MongoDB Atlas 
 By using the cloud database, you are now testing the application in a local deployment scenario without using alocal database.
@@ -44,3 +46,12 @@ To create new instance profile/IAM role:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-instanceprofile.html#iam-instanceprofile-create
 
 iam > Roles > Create Role
+In total you should create 2 roles:
+1. aws-elasticbeanstalk-service-role
+2. aws-elasticbeanstalk-ec2-role
+![alt text](image.png)
+
+Elastic Beanstalk will now create a new application wiwth a new web server environment named AddressBookApp-env to run its sample app:
+![alt text](image-1.png)
+
+## Part 2: Github Actions for Automated Deployment
