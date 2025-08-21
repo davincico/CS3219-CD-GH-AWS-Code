@@ -1,5 +1,6 @@
 # Backend Address Book JS - CD Tutorial
 The backend is equipped with basic functionalities, including the ability to add, retrieve, edit, and delete information, by connecting to  MongoDB Atlas.
+Guide: https://leonardqmarcq.com/posts/github-actions-cicd-elastic-beanstalk
 
 ### Setting up
 ```

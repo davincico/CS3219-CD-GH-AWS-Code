@@ -20,18 +20,19 @@ jobs:
                 cache: 'npm'
 
             - name: Generate Deployment Package
-              run: zip -r address-book-app.zip config controllers models routes index.js package
+              run: zip -r address-book-app.zip config controllers models routes index.js package-lock.json package.json
 
             - name: Get Node.js version
-              run: echo "VERSION=$(node -p 'require("./package.json").version')" >> "$GITHUB_ENV
+              run: echo "VERSION=$(node -p 'require("./package.json").version')" >> "$GITHUB_ENV"
 
+              
             - name: Deploy to EB
               uses: einaregilsson/beanstalk-deploy@v22
               with:
-                aws_access_key: $
-                aws_secret_key: $
+                aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                 application_name: AddressBookApp
                 environment_name: AddressBookApp-env
                 version_label: $
                 region: ap-southeast-1
-                deploymentpackage: address-book-app.zip
+                deployment_package: address-book-app.zip
