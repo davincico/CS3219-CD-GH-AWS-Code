@@ -12,7 +12,7 @@ npm install # install all dependencies
 npm install mongodb
 ```
 
-### Set up MongoDB Atlas 
+### 1. Set up MongoDB Atlas 
 By using the cloud database, you are now testing the application in a local deployment scenario without using alocal database.
 Set up account here: https://cloud.mongodb.com/
 - Enter username and password for your database
@@ -22,3 +22,8 @@ Run the application:
 ```
 npm start
 ```
+
+### 2. Set up AWS Elastic Beanstalk for Deployment
+We will deploy the backend of the address book application to AWS ELastic Beanstalk, then setup Github actions to automate deployment.
+
+AWS Elastic Beanstalk is a fully managed orchestration service within AWS that makes deployingweb applications simple. It handles the complexities of infrastructure setup, scaling, anddeployment, allowing developers to focus on writing code.
